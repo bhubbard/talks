@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Postmark | Presentations | Brandon Hubbard</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				
+				<section data-markdown>
+						<script type="text/template">
+							<!-- .slide: data-background="#FEDC32" -->
+							<img alt="" src="./images/postmark-logo.png" style="border:none;background: none;box-shadow: none;" width="158" height="25" />
+						</script>
+				</section>
+				
+				
+				<section>
+					<section>
+						<h2>SOME BACKGROUND</h2>
+					</section>
+						
+					<section>
+						<h2>Brandon Hubbard</h2>
+						<h3>CTO @ <br /><img class="logo" alt="" src="./images/imforza-logo-alt-small.png" /></h3>
+
+					</section>
+				
+							<section>
+							<img alt="" src="./images/logo-black.png" />
+							<p>Previously worked at (mt) Media Temple.</p>
+							<p>Also Contributed to Jetpack, Yoast, WordPress Core, plus more.</p>
+							</section>
+
+				</section>
+				
+				
+				<section>
+					<section>
+					<h2>Transactional Emails</h2>
+          			</section>
+          			<section>
+					<p>Emails <strong style="color:red;">NOT</strong> specifically for marketing purposes.</p>
+          			</section>
+          			<section>
+	          			<h2>Some Examples</h2>
+	          			<ul>
+		          			<li>WooCommerce Orders</li>
+		          			<li>Form Emails</li>
+		          			<li>Forgot/Reset Password email</li>
+		          			<li>New User Welcome email</li>
+		          			<li>etc</li>
+		          		</ul>
+          			</section>
+				</section>
+				
+				<section>
+					<h2>WordPress Email</h2>
+          <ol>
+            <li>WordPress uses a function called
+            <pre><code>wp_mail();</code></pre>
+            </li>
+            <li>Emails typically are processed by server's php mail (Postfix, Sendmail, etc).</li>
+            <li>Emails are <strong style="color:red;">NOT</strong> easily logged or tracked.</li>
+          </ol>
+        </section>
+
+        <section>
+          <section>
+            <h2>Why use Postmark?</h2>
+          </section>
+
+          <section>
+            <p>
+              Simply, we want to track everything!
+            </p>
+            <p>
+	            <img alt="" src="./images/delivery-tti.png" />
+            </p>
+          </section>
+
+          <section>
+            <img alt="" src="./images/FullDashboard.png" />
+          </section>
+          
+
+        </section>
+
+		<section>
+        	<section>
+          <h2>The Setup</h2>
+          <p style="font-size: 18px;">https://wordpress.org/plugins/postmark-approved-wordpress-plugin/</p>
+          </section>
+          <section>
+	          <img alt="" src="./images/sender-sigs.png" />
+	      </section>
+	      <section>
+	          <img alt="" src="./images/spf-pm-example.png" />
+	           <img alt="" src="./images/example-spf.png" />
+	      </section>
+	      <section>
+	          <img alt="" src="./images/dkim-example.png" />
+	      </section>
+          <section>
+	          <img alt="" src="./images/plugin-setup.png" />
+	      </section>
+        </section>
+        
+        
+        <section>
+	       
+	        <section>
+		         <h2>Possible Roadblocks</h2>
+		    </section>
+		    <section>
+		         <ul>
+			         <li>API Failure, No Fallbacks.</li>
+			         <li>ThirdParty Plugins Conflicts. Did you add your sender sig?</li>
+					 <li>Plugin doesn't check SPF/DKIM has been verified.</li>
+					 <li>Can be setup with any domain.</li>
+		         </ul>
+		    </section>
+       
+	    </section>
+	    
+	    <section>
+		    <section>
+			    <h2>Whats Next?</h2>
+			</section>
+			
+			<section>
+			    <ul>
+				    <li>WordPress specific api library <br />- https://wp-api-libraries.com</li>
+				    <li>imFORZA is BETA testing for all our hosted clients.</li>
+			    </ul>
+			</section>
+		</section>
+
+        
+        
+			<section style="text-align: left;">
+				<h1>THE END</h1>
+				<p><img class="j-icon plain" data-src="img/home.png" alt="Website"><a href="https://brandonhubbard.com"> https://brandonhubbard.com</a></p>
+				<p><img class="j-icon plain" data-src="img/twitter.png" alt="Twitter"><a href="https://twitter.com/hj_chen"> @bhubbard</a></p>
+			</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
