@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="css/reveal.css" type="text/css">
     <link rel="stylesheet" href="css/theme/black.css" type="text/css"><!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css" type="text/css">
+    
+    <script type="text/javascript">
+        var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    
 </head>
 
 <body>
@@ -212,13 +221,6 @@
                 ]
             });
     </script><!-- Printing and PDF exports -->
-    <script type="text/javascript">
-        var link = document.createElement( 'link' );
-            link.rel = 'stylesheet';
-            link.type = 'text/css';
-            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-            document.getElementsByTagName( 'head' )[0].appendChild( link );
-    </script>
     
     <script type="text/javascript" data-cfasync="false">
 		var disableStr = 'ga-disable-UA-103219983-1';
